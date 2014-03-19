@@ -24,3 +24,6 @@ class NusSpider(Spider):
     def parse_popup(self, response):
         """Parse each popup content individually"""
         sel = Selector(response)
+        title = sel.xpath('//table[@id="viewtbl"]/tr[.//*[text()="Module Title"]]')
+        print title.xpath('.//td[2]//text()').extract()
+
