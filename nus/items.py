@@ -5,7 +5,11 @@
 
 from scrapy.item import Item, Field
 
-class NusItem(Item):
+class Module(Item):
     code = Field()
-    name = Field()
-    MC = Field()
+    title = Field()
+    description = Field()
+    prerequisites = Field()
+    credit = Field()
+    semester = Field()
+    year = Field()
