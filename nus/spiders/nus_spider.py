@@ -44,7 +44,7 @@ class NusSpider(Spider):
     def parse_popup(self, response):
         """Parse each popup content individually"""
         loader = ModuleLoader(selector=Selector(response).xpath('//table[@id="viewtbl"]'), response=response)
-      
+
         if "msearch_view_full.aspx" in response.url:
             # if we're looking at the common view of the module, scrape year/semester from the dropdowns 
             loader.add_xpath('year', '//select[@name="ddAY"]/option[@selected="selected"]/@value')
